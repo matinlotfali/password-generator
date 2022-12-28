@@ -1,0 +1,14 @@
+{
+    "name": "Password Generator",
+    "version": "0.1.0",
+    "description": "Generates a random password",
+    "manifest_version": 3,
+
+    "action":{
+        "default_popup": "password.html"
+    },
+
+    "permissions": ["clipboardWrite"]
+}
+
+
