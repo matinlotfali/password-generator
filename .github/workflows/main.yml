@@ -6,8 +6,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: Zip directories
         run: |
-          zip -r firefox.xpi firefox
-          zip -r chrome.crx chrome
+          mkdir output
+          zip -r output/firefox.zip ${{ github.workspace }}/firefox/*
+          zip -r output/chrome.zip  ${{ github.workspace }}/chrome/*
           pwd
           ls -l
       - name: Upload archives
@@ -15,5 +16,4 @@ jobs:
         with:
           name: extensions
           path: |
-            '${{ github.workspace }}/*.xpi'
-            '${{ github.workspace }}/*.crx'
+            '${{ github.workspace }}/*.zip'
