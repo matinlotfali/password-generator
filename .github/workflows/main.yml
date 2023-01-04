@@ -5,7 +5,7 @@ jobs:
     steps:
       - name: Zip directories
         run: |
-          ls -lrt *
+          ls *
           zip -r firefox.xpi . -i ./firefox/*
           zip -r chrome.crx . -i ./chrome/*
       - name: Upload archives
