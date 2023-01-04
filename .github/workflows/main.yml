@@ -1,0 +1,17 @@
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zip directories
+        run: |
+          zip -r firefox.xpi firefox
+          zip -r chrome.crx chrome
+          done
+      - name: Upload archives
+        uses: actions/upload-artifact@v2
+        with:
+          name: extensions
+          path: |
+            'firefox.xpi'
+            'chrome.crx'
