@@ -16,4 +16,5 @@ jobs:
           if-no-files-found: error 
           name: extensions
           path: |
-            '${{ github.workspace }}/output/*'
+            '${{ github.workspace }}/output/*.xpi'
+            '${{ github.workspace }}/output/*.crx'
