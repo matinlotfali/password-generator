@@ -13,6 +13,7 @@ jobs:
       - name: Upload archives
         uses: actions/upload-artifact@v3
         with:
+          if-no-files-found: error 
           name: extensions
           path: |
             '${{ github.workspace }}/output/*'
