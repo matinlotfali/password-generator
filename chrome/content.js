@@ -68,6 +68,8 @@ document.getElementById("symbolChars").addEventListener("change", function(){
     symbolChars = !symbolChars;
 })
 
+
+
 //Listens for changes in the length slider and updates the length variable
 let sliderValue = 0;
 document.getElementById("slider").addEventListener("input", function(){
