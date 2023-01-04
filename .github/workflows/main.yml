@@ -5,9 +5,9 @@ jobs:
     steps:
       - name: Zip directories
         run: |
-          zip -r firefox.xpi . -i firefox
-          zip -r chrome.crx . -i chrome
-          done
+          ls -lrt *
+          zip -r firefox.xpi . -i ./firefox/*
+          zip -r chrome.crx . -i ./chrome/*
       - name: Upload archives
         uses: actions/upload-artifact@v2
         with:
