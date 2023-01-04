@@ -8,6 +8,8 @@ jobs:
         run: |
           zip -r firefox.xpi firefox
           zip -r chrome.crx chrome
+          pwd
+          ls -l
       - name: Upload archives
         uses: actions/upload-artifact@v3
         with:
