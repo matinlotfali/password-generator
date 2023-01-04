@@ -7,9 +7,9 @@ jobs:
       - name: Zip directories
         run: |
           mkdir output
-          zip -r output/firefox.xpi ${{ github.workspace }}/firefox/*
-          zip -r output/chrome.crx  ${{ github.workspace }}/chrome/*
-          ls -l output
+          zip -r output/firefox.xpi firefox
+          zip -r output/chrome.crx  chrome
+          find ${{ github.workspace }}/output
       - name: Upload archives
         uses: actions/upload-artifact@v3
         with:
