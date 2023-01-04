@@ -6,13 +6,13 @@ jobs:
       - uses: actions/checkout@v1
       - name: Zip directories
         run: |
-          ls -lrt *
           zip -r firefox.xpi firefox
           zip -r chrome.crx chrome
+          ls -l *
       - name: Upload archives
         uses: actions/upload-artifact@v2
         with:
           name: extensions
           path: |
-            'firefox.xpi'
-            'chrome.crx'
+            '*.xpi'
+            '*.crx'
