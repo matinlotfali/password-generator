@@ -8,11 +8,12 @@ jobs:
         run: |
           zip -r firefox.xpi firefox
           zip -r chrome.crx chrome
-          ls -l *
+          pwd
+          ls *
       - name: Upload archives
         uses: actions/upload-artifact@v2
         with:
           name: extensions
           path: |
-            '*.xpi'
-            '*.crx'
+            './*.xpi'
+            './*.crx'
