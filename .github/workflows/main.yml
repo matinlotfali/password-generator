@@ -1,0 +1,20 @@
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Zip directories
+        run: |
+          mkdir output
+          zip -r output/firefox.xpi firefox
+          zip -r output/chrome.crx  chrome
+          find ${{ github.workspace }}/output
+      - name: Upload archives
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error 
+          name: extensions
+          path: |
+            ${{ github.workspace }}/output/*.xpi
+            ${{ github.workspace }}/output/*.crx
